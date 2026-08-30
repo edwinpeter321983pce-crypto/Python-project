@@ -1,0 +1,29 @@
+import turtle
+import colorsys
+
+screen = turtle.Screen()
+screen.bgcolor("black")
+screen.title("Ko hla")
+screen.tracer(1)
+t = turtle.Turtle()
+t.hideturtle()
+t.speed(0)
+
+def draw_hert(size):
+    start_pos = t.pos()
+    t.pendown()
+    t.left(50)
+    t.forward(size)
+    t.circle(size * 0.375, 200)
+    t.right(140)
+    t.circle(size * 0.375, 200)
+    t.forward(size)
+    t.penup()
+    t.goto(start_pos)
+
+center_y = -40
+t.penup()
+t.width(1.5) 
+t.pencolor("red") # this makes the pen red so you can see it!
+draw_hert(100)
+screen.mainloop()
