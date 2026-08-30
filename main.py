@@ -18,7 +18,7 @@ API_KEY = os.getenv("AI_API_KEY")
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     """Serves the main PraiseAI website landing and chat page."""
-    return templates.TemplateResponse(request, "index.html")
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/api/chat")
 async def chat_with_ai(payload: dict):
